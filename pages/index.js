@@ -27,12 +27,12 @@ function Hhi(image) {
     <div className="p-8">
     <div className=" border-black border-4 w-fit relative  ">
       
-    <textarea
+    <input
             value={number}
             onChange={changeHandler}
             placeholder="Password"
             className=" w-1/2 h-3/6 px-4 py-1   mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
-          ></textarea>
+          ></input>
 
         <div className="">
         <Image src="/shirt.png" width={400} height={500} alt="logo" className="w-full rounded-t-xl"/>
