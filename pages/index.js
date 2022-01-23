@@ -38,7 +38,7 @@ function Hhi(image) {
         <Image src="/shirt.png" width={400} height={500} alt="logo" className="w-full rounded-t-xl"/>
         </div>
        
-        <div className="absolute bottom-48 right-32  ">
+        <div className="absolute bottom-36 right-24 w-2/6   lg:bottom-48 lg:right-32    ">
         <Image src={state} width={150} height={150} alt="logo" className="w-full  rounded-sm"/>
         </div>
         
