@@ -5,15 +5,14 @@ function Hhi(image) {
   const [state, setState] = useState();
   
 
-
-  const registerUser = event => {
-    event.preventDefault() 
-    setNumber(event.target.name.value)
-    console.log(event.target.name.value + "BAM")
-    getimage()
-    
+   function changeHandler(event) {
+     setNumber(event.target.value);
   }
-  const [number, setNumber] = useState();
+  const registerUser = event => {
+    event.preventDefault() // don't redirect the page
+    // where we'll add our form logic
+  }
+  const [number, setNumber] = useState("4705");
     async function getimage(){
         const res = await fetch(`https://api.opensea.io/api/v1/asset/0x26badf693f2b103b021c670c852262b379bbbe8a/${number}/?format=json`)
         const data = await res.json()
@@ -22,6 +21,9 @@ function Hhi(image) {
         setState(image)
         console.log(state + "test");
     }
+
+
+
     useEffect(() => {
    getimage()
   }, [])
@@ -32,10 +34,21 @@ function Hhi(image) {
    
     <div className=" border-black border-4 w-fit relative  ">
   
-    <form onSubmit={registerUser}>
-      <input className="bg-slate-500 p-4" id="name" type="text" placeholder="4706" required />
-      <button className="bg-blue-500 p-2 rounded-full" type="submit">Register</button>
-    </form>
+    <input
+            value={number}
+            onChange={changeHandler}
+            placeholder="Password"
+            className=" w-1/2 h-3/6 px-4 py-1   mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg bg-gray-200 focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
+          ></input>
+
+          <button
+            onClick={getimage}
+            className="bg-blue-500 p-8"
+          >press to load</button>
+
+
+<p>you selected: {number}</p>
+
 
         <div className="">
         <Image src="/shirt.png" width={400} height={500} alt="logo" className="w-full rounded-t-xl"/>
