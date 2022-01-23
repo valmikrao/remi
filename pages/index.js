@@ -24,7 +24,7 @@ function Hhi(image) {
     
   console.log('hi' + state);
   return (
-    <div>
+    <div className="p-8">
     <div className=" border-black border-4 w-fit relative  ">
       
     <textarea
