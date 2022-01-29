@@ -77,10 +77,12 @@ function Hhi(image) {
         </div>
         
     </div>
-    <button
-            onClick={screenshot}
-            className="bg-blue-500 p-8"
-          >press to screenshot</button>
+
+    <form action="/api/checkout" method="POST">
+      <button className="bg-red-500 p-8" type="submit">Checkout</button>
+    </form>
+
+
     </div>
 
     );
