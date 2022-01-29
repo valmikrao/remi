@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^1.22.0",
     "dom-to-image": "^2.6.0",
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
