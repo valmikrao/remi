@@ -59,7 +59,7 @@ function Hhi(image) {
         
     </div>
     <form action="/api/checkout" method="POST">
-      <button className="bg-red-500 p-8" type="submit">Checkout</button>
+      <button className="bg-red-500 p-8" type="submit">C heckout</button>
     </form>
     </div>
     );
