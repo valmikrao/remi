@@ -1,11 +1,19 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-
+import html2canvas from "html2canvas";
 function Hhi(image) {
   const [state, setState] = useState();
   
+    function screenshot(){
+      html2canvas((document.querySelector("#capture")), height="200").then(canvas => {
+        document.body.appendChild(canvas)
+    });
+    
+    }
 
+
+  
    function changeHandler(event) {
      setNumber(event.target.value);
   }
@@ -48,6 +56,8 @@ function Hhi(image) {
           >press to load</button>
 
 
+
+
 <p>you selected: {number}</p>
 
 <form action="/api/checkout" method="POST">
@@ -55,6 +65,8 @@ function Hhi(image) {
     </form>
 
 
+          
+          <div id="capture" className="bg-black w-full h-full">
         <div className="">
         <Image src="/shirt.png" width={400} height={500} alt="logo" className="w-full rounded-t-xl"/>
         </div>
@@ -62,9 +74,15 @@ function Hhi(image) {
         <div className="absolute bottom-36 right-24 w-2/6   lg:bottom-48 lg:right-32    ">
        {state && <Image src={state} width={150} height={150} alt="logo" className="w-full  rounded-sm"/> }
         </div>
+        </div>
         
     </div>
+    <button
+            onClick={screenshot}
+            className="bg-blue-500 p-8"
+          >press to screenshot</button>
     </div>
+
     );
 }
 export default Hhi;
