@@ -1,6 +1,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+
 function Hhi(image) {
   const [state, setState] = useState();
   
@@ -14,7 +15,7 @@ function Hhi(image) {
   }
   const [number, setNumber] = useState("4705");
     async function getimage(){
-        const res = await fetch(`https://api.opensea.io/api/v1/asset/0x26badf693f2b103b021c670c852262b379bbbe8a/${number}/?format=json`)
+        const res = await fetch(`https://api.opensea.io/api/v1/asset/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/${number}/?format=json`)
         const data = await res.json()
         console.log(data.image_url);
         const image = data.image_url
@@ -48,6 +49,10 @@ function Hhi(image) {
 
 
 <p>you selected: {number}</p>
+
+<form action="/api/checkout" method="POST">
+      <button className="bg-red-500 p-8" type="submit">Checkout</button>
+    </form>
 
 
         <div className="">
