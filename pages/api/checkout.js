@@ -5,13 +5,16 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         try {
+            console.log(req.body)
+           const name = req.body.name;
+           
             const session = await stripe.checkout.sessions.create({
                 line_items: [
                     {
                       price_data: {
                         currency: 'usd',
                         product_data: {
-                          name: 'T-shirt',
+                          name: name,
                           images: ['https://www.aleemrehmtulla.com/img/aleem/portugal.png'],
                         },
                         unit_amount: 2000,
@@ -24,9 +27,11 @@ export default async function handler(req, res) {
                   cancel_url: 'https://example.com/cancel',
               });
           
-              await res.redirect(303, session.url);
+              res.status(200).json({ user: session.url})
+              
           } catch (err) {
             res.status(500).json({ message: err.message });
+            res.status(200).json({ user: "hi"})
           }
     } else {
       res.setHeader('Allow', 'POST');
