@@ -26,10 +26,11 @@ function Hhi(image) {
     useEffect(() => {
    getimage()
   }, [])
+  
   async function Call(){
     console.log("hi")
 
-   fetch('/api/hi', {
+   fetch('/api/checkout', {
       body: JSON.stringify({
         name: number
       }),
