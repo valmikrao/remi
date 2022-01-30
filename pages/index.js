@@ -30,8 +30,7 @@ function Hhi(image) {
 
   async function Call(){
     console.log("hi")
-    
-  
+
 
    fetch('/api/hi', {
       body: JSON.stringify({
@@ -44,7 +43,7 @@ function Hhi(image) {
     }).then(res => res.json()).then(data => {window.open(data.user)})
 
   }
-    
+
   console.log('hi' + state);
   return (
     <div className="p-8">
@@ -76,10 +75,9 @@ function Hhi(image) {
         </div>
         
     </div>
- 
+
     <button className='bg-blue-500 p-8' onClick={Call} />
 
- 
     </div>
     );
 }
