@@ -26,6 +26,21 @@ function Hhi(image) {
     useEffect(() => {
    getimage()
   }, [])
+  async function Call(){
+    console.log("hi")
+
+   fetch('/api/hi', {
+      body: JSON.stringify({
+        name: number
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      method: 'POST'
+    }).then(res => res.json()).then(data => {window.open(data.user)})
+
+  }
+
     
   console.log('hi' + state);
   return (
@@ -58,9 +73,7 @@ function Hhi(image) {
         </div>
         
     </div>
-    <form action="/api/checkout" method="POST">
-      <button className="bg-red-500 p-8" type="submit">C heckout</button>
-    </form>
+    <button className='bg-blue-500 p-8' onClick={Call} />
     </div>
     );
 }
