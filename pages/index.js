@@ -4,6 +4,7 @@ function Hhi(image) {
   const [state, setState] = useState();
   
 
+
    function changeHandler(event) {
      setNumber(event.target.value);
   }
@@ -26,8 +27,10 @@ function Hhi(image) {
     useEffect(() => {
    getimage()
   }, [])
+
   async function Call(){
     console.log("hi")
+
 
    fetch('/api/hi', {
       body: JSON.stringify({
@@ -41,7 +44,6 @@ function Hhi(image) {
 
   }
 
-    
   console.log('hi' + state);
   return (
     <div className="p-8">
@@ -73,7 +75,9 @@ function Hhi(image) {
         </div>
         
     </div>
+
     <button className='bg-blue-500 p-8' onClick={Call} />
+
     </div>
     );
 }
