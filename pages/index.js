@@ -2,15 +2,10 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 function Hhi(image) {
   const [state, setState] = useState();
-  
-
    function changeHandler(event) {
      setNumber(event.target.value);
   }
-  const registerUser = event => {
-    event.preventDefault() // don't redirect the page
-    // where we'll add our form logic
-  }
+
   const [number, setNumber] = useState("4705");
     async function getimage(){
         const res = await fetch(`https://api.opensea.io/api/v1/asset/0x26badf693f2b103b021c670c852262b379bbbe8a/${number}/?format=json`)
@@ -21,12 +16,6 @@ function Hhi(image) {
         console.log(state + "test");
     }
 
-
-
-    useEffect(() => {
-   getimage()
-  }, [])
-  
   async function Call(){
     console.log("hi")
 
